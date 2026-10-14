@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Dr. Nagaraj Kulkarni and Pharmacology Insiders</title>
+<meta name="description" content="Writing on pharmacology, drug discovery, AI in drug discovery and careers across academia and industry, from Dr. Nagaraj Kulkarni and the Pharmacology Insiders community.">
+<link rel="canonical" href="https://www.nagarajkulkarni.com/blog.html">
+<meta name="theme-color" content="#061428">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nagarajkulkarni.com/blog.html">
+<meta property="og:title" content="Blog | Dr. Nagaraj Kulkarni and Pharmacology Insiders">
+<meta property="og:description" content="Writing on pharmacology, drug discovery, AI and careers across academia and industry.">
+<meta property="og:image" content="https://www.nagarajkulkarni.com/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Dr. Nagaraj Kulkarni and Pharmacology Insiders">
+<meta name="twitter:description" content="Writing on pharmacology, drug discovery, AI and careers across academia and industry.">
+<meta name="twitter:image" content="https://www.nagarajkulkarni.com/share.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--ink:#061428;
+--night:#0c2140;
+--glass:#8fbde6;
+--gold:#e0b86a;
+--gold-deep:#8a6420;
+--cream:#f2ead9;
+--mist:#b9c4d2;
+--paper:#edf1f5;
+--type:#13233b;
+--type-soft:#4a5a70;
+--rule:#c9d3df;
+--measure:62ch;
+--gutter:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+margin:0;background:var(--ink);color:var(--cream);
+font-family:"EB Garamond",Garamond,"Times New Roman",serif;
+font-size:1.1875rem;line-height:1.6;
+font-feature-settings:"kern","liga","onum";
+text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-wrap:balance}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--ink);padding:8px 14px;z-index:10}
+.skip:focus{left:12px}
+
+/* ---------- top bar ---------- */
+.top{position:absolute;inset:0 0 auto 0;z-index:3}
+.top .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-top:26px;padding-bottom:10px}
+.name{font-size:1.25rem;text-decoration:none;color:var(--cream);letter-spacing:.01em}
+.top nav{display:flex;gap:clamp(16px,2.6vw,34px);font-size:1.0625rem}
+.top nav a{text-decoration:none;color:var(--mist)}
+.top nav a:hover,.top nav a[aria-current="page"]{color:var(--cream)}
+.top nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.3em;text-decoration-thickness:1px}
+
+/* ---------- page header ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;
+background:
+radial-gradient(60% 55% at 96% 0%, rgba(243,217,160,.16), transparent 70%),
+radial-gradient(55% 60% at 0% 100%, rgba(47,109,181,.22), transparent 70%),
+linear-gradient(180deg,#0a1d3a 0%, var(--ink) 75%);
+}
+.hero::before{
+content:"";position:absolute;inset:-10% -10% 0 0;z-index:-1;pointer-events:none;
+background:repeating-conic-gradient(from 198deg at 100% 0%, rgba(255,236,196,.06) 0deg 1.6deg, transparent 1.6deg 7.5deg);
+-webkit-mask-image:radial-gradient(circle at 100% 0%, #000 0%, transparent 62%);
+mask-image:radial-gradient(circle at 100% 0%, #000 0%, transparent 62%);
+}
+.hero .wrap{padding-top:clamp(120px,15vw,170px);padding-bottom:clamp(56px,7vw,96px)}
+.status{font-style:italic;color:var(--gold);font-size:1.3125rem;margin-bottom:.9em}
+.hero h1{font-size:clamp(2.6rem,1.7rem + 4vw,4.6rem);line-height:1.02;color:var(--cream);max-width:18ch}
+.lede{font-style:italic;font-size:clamp(1.3rem,1.1rem + .8vw,1.6rem);line-height:1.38;color:var(--mist);margin:.9em 0 1.6em;max-width:36ch}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.btn{display:inline-block;font:inherit;font-size:1.125rem;font-weight:500;text-decoration:none;
+background:var(--gold);color:var(--ink);padding:.62em 1.25em .58em;border-radius:3px;border:1px solid var(--gold);
+transition:background-color .2s ease,color .2s ease}
+.btn:hover{background:#f0cf8c;border-color:#f0cf8c}
+.textlink{color:var(--cream);text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.22em;text-decoration-thickness:1px}
+.textlink:hover{text-decoration-color:var(--gold)}
+
+/* ---------- paper sections ---------- */
+.paper{background:var(--paper);color:var(--type)}
+.paper a{color:var(--type)}
+.section{padding:clamp(72px,10vw,128px) 0}
+.eyebrow{font-style:italic;color:var(--gold-deep);font-size:1.1875rem;margin-bottom:1.4em}
+
+.cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(28px,6vw,88px)}
+.cats li{padding-top:1.1em;border-top:1px solid var(--rule)}
+.cats h3{font-size:clamp(1.6rem,1.3rem + 1vw,2rem);color:var(--type);margin-bottom:.4em}
+.cats p{color:var(--type-soft);font-size:1.1875rem;margin:0;max-width:46ch}
+.soon{margin-top:clamp(48px,6vw,80px);padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);max-width:var(--measure)}
+.soon h2{font-size:clamp(1.8rem,1.4rem + 1.6vw,2.6rem);color:var(--type);margin-bottom:.5em}
+.soon p{font-size:1.25rem;color:var(--type-soft)}
+
+/* ---------- subscribe ---------- */
+.subscribe{background:
+radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
+.subscribe h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);margin-bottom:.5em;color:var(--cream)}
+.subscribe p{color:var(--mist);max-width:50ch}
+
+footer{background:#040e1d;color:#8e9bad;font-size:1rem;font-variant-numeric:lining-nums}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:26px;padding-bottom:30px}
+footer a{text-decoration-color:rgba(142,155,173,.5)}
+
+/* ---------- small screens ---------- */
+@media (max-width:860px){
+.cats{grid-template-columns:1fr}
+.hero .wrap{padding-top:96px}
+}
+@media (max-width:620px){
+body{font-size:1.125rem}
+.top nav a:not(.keep){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+<div class="wrap">
+<a class="name" href="index.html">Dr. Nagaraj Kulkarni</a>
+<nav aria-label="Sections">
+<a href="index.html#book">The book</a>
+<a class="keep" href="pharmacology-insiders.html">Pharmacology Insiders</a>
+<a class="keep" href="blog.html" aria-current="page">Blog</a>
+<a href="talks.html">Talks</a>
+<a class="keep" href="#subscribe">Subscribe</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+<div class="wrap">
+<p class="status">Writing</p>
+<h1>Blog</h1>
+<p class="lede">Pharmacology, drug discovery and the road between the lab and the clinic, from Dr. Nagaraj Kulkarni and the Pharmacology Insiders community.</p>
+<div class="actions">
+<a class="btn js-news" href="#subscribe">Get new articles by email</a>
+<a class="textlink" href="#topics">Browse topics</a>
+</div>
+</div>
+</section>
+
+<section class="paper section" id="topics" aria-labelledby="topics-h">
+<div class="wrap">
+<h2 id="topics-h" class="eyebrow">What the blog covers</h2>
+<ul class="cats">
+<li>
+<h3>Pharmacology Insiders</h3>
+<p>Community news, questions and answers, member spotlights and event announcements.</p>
+</li>
+<li>
+<h3>Drug Discovery Explained</h3>
+<p>How targets are chosen, why molecules fail, and what happens between a hit and an IND, in plain language.</p>
+</li>
+<li>
+<h3>Academia to Industry</h3>
+<p>Career moves, CVs and interviews, and what industry looks for in scientists coming from academia.</p>
+</li>
+<li>
+<h3>AI in Drug Discovery</h3>
+<p>Practical views on what AI can and cannot do today, with case studies.</p>
+</li>
+<li>
+<h3>Stories from the Lab</h3>
+<p>Behind-the-scenes pieces connected to <i>The Molecule That Lived</i>.</p>
+</li>
+</ul>
+
+<div class="soon">
+<h2>First articles coming soon</h2>
+<p>The first pieces are in preparation. Subscribe below and you will get a note when they are published.</p>
+</div>
+</div>
+</section>
+
+<section class="subscribe section" id="subscribe" aria-labelledby="sub-h">
+<div class="wrap">
+<h2 id="sub-h">Never miss an article</h2>
+<p>Send a short email and you will be added to the Pharmacology Insiders newsletter. You can also follow the community on <a class="textlink" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">LinkedIn</a>.</p>
+<div class="actions">
+<a class="btn js-news" href="#subscribe">Get the newsletter</a>
+<a class="textlink" href="pharmacology-insiders.html">About Pharmacology Insiders</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<span>&copy; <span id="yr">2026</span> Dr. Nagaraj Kulkarni</span>
+<span><a href="index.html">The Molecule That Lived</a> &middot; <a href="pharmacology-insiders.html">Pharmacology Insiders</a> &middot; <a href="talks.html">Talks</a></span>
+</div>
+</footer>
+
+<script>
+(function(){
+// Address is assembled here so spam bots reading the page source don't find it.
+var u='nagaraj', d='nagarajkulkarni.com', addr=u+'@'+d;
+var news='mailto:'+addr+'?subject='+encodeURIComponent('Pharmacology Insiders: newsletter')+
+'&body='+encodeURIComponent('Hello,\n\nPlease add me to the Pharmacology Insiders newsletter.\n\nName:\n');
+document.querySelectorAll('.js-news').forEach(function(a){a.href=news;});
+var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
+})();
+</script>
+</body>
+</html>
