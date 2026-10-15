@@ -105,9 +105,17 @@ transition:background-color .2s ease,color .2s ease}
 .cats li{padding-top:1.1em;border-top:1px solid var(--rule)}
 .cats h3{font-size:clamp(1.6rem,1.3rem + 1vw,2rem);color:var(--type);margin-bottom:.4em}
 .cats p{color:var(--type-soft);font-size:1.1875rem;margin:0;max-width:46ch}
-.soon{margin-top:clamp(48px,6vw,80px);padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);max-width:var(--measure)}
-.soon h2{font-size:clamp(1.8rem,1.4rem + 1.6vw,2.6rem);color:var(--type);margin-bottom:.5em}
-.soon p{font-size:1.25rem;color:var(--type-soft)}
+
+/* article list */
+.latest{margin:0 0 clamp(56px,7vw,88px);padding:0;list-style:none}
+.post{padding:1.4em 0;border-top:1px solid var(--rule)}
+.post:last-child{border-bottom:1px solid var(--rule)}
+.post .cat{font-style:italic;color:var(--gold-deep);font-size:1.0625rem;margin:0 0 .3em}
+.post h3{font-size:clamp(1.6rem,1.3rem + 1.2vw,2.2rem);margin-bottom:.4em}
+.post h3 a{text-decoration:none;color:var(--type)}
+.post h3 a:hover{text-decoration:underline;text-decoration-color:var(--gold-deep);text-underline-offset:.2em;text-decoration-thickness:1px}
+.post p{color:var(--type-soft);font-size:1.1875rem;margin:0;max-width:62ch}
+.post .meta{font-size:1rem;color:var(--type-soft);margin-top:.6em}
 
 /* ---------- subscribe ---------- */
 .subscribe{background:
@@ -164,7 +172,29 @@ html{scroll-behavior:auto}
 
 <section class="paper section" id="topics" aria-labelledby="topics-h">
 <div class="wrap">
-<h2 id="topics-h" class="eyebrow">What the blog covers</h2>
+<h2 id="latest-h" class="eyebrow">Latest articles</h2>
+<ul class="latest">
+<li class="post">
+<p class="cat">Drug Discovery Explained</p>
+<h3><a href="why-drug-candidates-fail-in-vivo.html">Why promising drug candidates fail in vivo</a></h3>
+<p>A candidate can look excellent in the dish and still fail in an animal or a patient. Six common reasons, and the questions that help catch them early.</p>
+<p class="meta">15 October 2026</p>
+</li>
+<li class="post">
+<p class="cat">Drug Discovery Explained</p>
+<h3><a href="go-no-go-decisions-in-drug-discovery.html">How to make better Go/No-Go decisions in drug discovery</a></h3>
+<p>Pre-agreed criteria, honest evidence grading, kill criteria and written decisions: practical habits that make the call clearer and less biased.</p>
+<p class="meta">15 October 2026</p>
+</li>
+<li class="post">
+<p class="cat">AI in Drug Discovery</p>
+<h3><a href="what-ai-can-and-cannot-solve-in-drug-discovery.html">What AI can, and cannot, solve in drug discovery</a></h3>
+<p>Where AI is genuinely useful today, where it falls short, and how to judge claims about it.</p>
+<p class="meta">15 October 2026</p>
+</li>
+</ul>
+
+<h2 id="topics-h" class="eyebrow">Topics we cover</h2>
 <ul class="cats">
 <li>
 <h3>Pharmacology Insiders</h3>
@@ -187,17 +217,12 @@ html{scroll-behavior:auto}
 <p>Behind-the-scenes pieces connected to <i>The Molecule That Lived</i>.</p>
 </li>
 </ul>
-
-<div class="soon">
-<h2>First articles coming soon</h2>
-<p>The first pieces are in preparation. Subscribe below and you will get a note when they are published.</p>
-</div>
 </div>
 </section>
 
 <section class="subscribe section" id="subscribe" aria-labelledby="sub-h">
 <div class="wrap">
-<h2 id="sub-h">Never miss an article</h2>
+<h2 id="sub-h">Get new articles by email</h2>
 <p>Send a short email and you will be added to the Pharmacology Insiders newsletter. You can also follow the community on <a class="textlink" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">LinkedIn</a>.</p>
 <div class="actions">
 <a class="btn js-news" href="#subscribe">Get the newsletter</a>

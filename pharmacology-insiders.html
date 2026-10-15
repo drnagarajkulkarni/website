@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pharmacology Insiders | Translating Science Together</title>
-<meta name="description" content="Pharmacology Insiders connects, educates and empowers pharmacology professionals by fostering collaboration between academia and industry. Founded by Dr. Nagaraj Kulkarni.">
+<meta name="description" content="The professional community for pharmacology, drug discovery and drug development. Practical scientific insights, real-world R&D case studies, career development and connections across academia and industry.">
 <link rel="canonical" href="https://www.nagarajkulkarni.com/pharmacology-insiders.html">
 <meta name="theme-color" content="#061428">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nagarajkulkarni.com/pharmacology-insiders.html">
 <meta property="og:title" content="Pharmacology Insiders | Translating Science Together">
-<meta property="og:description" content="A community connecting academia and industry to accelerate the translation of research into real-world therapeutic solutions.">
+<meta property="og:description" content="The professional community for pharmacology, drug discovery and drug development. Case studies, career guidance and connections across academia and industry.">
 <meta property="og:image" content="https://www.nagarajkulkarni.com/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pharmacology Insiders | Translating Science Together">
-<meta name="twitter:description" content="A community connecting academia and industry to accelerate the translation of research into real-world therapeutic solutions.">
+<meta name="twitter:description" content="The professional community for pharmacology, drug discovery and drug development.">
 <meta name="twitter:image" content="https://www.nagarajkulkarni.com/share.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -33,7 +33,7 @@
 "@type": "Organization",
 "name": "Pharmacology Insiders",
 "slogan": "Translating Science Together",
-"description": "A community that connects, educates and empowers pharmacology professionals by fostering collaboration between academia and industry.",
+"description": "The professional community for pharmacology, drug discovery and drug development, connecting academia and industry.",
 "url": "https://www.nagarajkulkarni.com/pharmacology-insiders.html",
 "founder": { "@type": "Person", "name": "Dr. Nagaraj Kulkarni", "url": "https://www.nagarajkulkarni.com/" },
 "sameAs": ["https://www.linkedin.com/company/pharmacology-insiders"]
@@ -83,7 +83,7 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .top nav a:hover,.top nav a[aria-current="page"]{color:var(--cream)}
 .top nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.3em;text-decoration-thickness:1px}
 
-/* ---------- page header ---------- */
+/* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;isolation:isolate;
 background:
 radial-gradient(60% 55% at 96% 0%, rgba(243,217,160,.16), transparent 70%),
@@ -99,14 +99,14 @@ mask-image:radial-gradient(circle at 100% 0%, #000 0%, transparent 62%);
 .hero .wrap{padding-top:clamp(120px,15vw,170px);padding-bottom:clamp(56px,7vw,96px)}
 .status{font-style:italic;color:var(--gold);font-size:1.3125rem;margin-bottom:.9em}
 .hero h1{font-size:clamp(2.6rem,1.7rem + 4vw,4.6rem);line-height:1.02;color:var(--cream);max-width:18ch}
-.lede{font-style:italic;font-size:clamp(1.3rem,1.1rem + .8vw,1.6rem);line-height:1.38;color:var(--mist);margin:.9em 0 1.6em;max-width:36ch}
+.lede{font-size:clamp(1.4rem,1.15rem + 1vw,1.85rem);line-height:1.3;color:var(--cream);margin:.9em 0 .6em;max-width:30ch;text-wrap:balance}
+.sublede{font-style:italic;font-size:clamp(1.15rem,1.05rem + .5vw,1.35rem);line-height:1.45;color:var(--mist);margin:0 0 1.8em;max-width:46ch}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
-.btn{display:inline-block;font:inherit;font-size:1.125rem;font-weight:500;text-decoration:none;
+.btn{display:inline-block;font:inherit;font-size:1.125rem;font-weight:500;text-decoration:none;cursor:pointer;
 background:var(--gold);color:var(--ink);padding:.62em 1.25em .58em;border-radius:3px;border:1px solid var(--gold);
 transition:background-color .2s ease,color .2s ease}
 .btn:hover{background:#f0cf8c;border-color:#f0cf8c}
-.btn.line{background:transparent;color:var(--type);border-color:var(--type)}
-.btn.line:hover{background:var(--type);color:var(--paper)}
+.btn.big{font-size:1.3125rem;padding:.7em 1.5em .66em}
 .btn.line-dark{background:transparent;color:var(--cream);border-color:rgba(242,234,217,.6)}
 .btn.line-dark:hover{background:var(--cream);color:var(--ink)}
 .textlink{color:var(--cream);text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.22em;text-decoration-thickness:1px}
@@ -117,38 +117,66 @@ transition:background-color .2s ease,color .2s ease}
 .paper a{color:var(--type)}
 .section{padding:clamp(72px,10vw,128px) 0}
 .eyebrow{font-style:italic;color:var(--gold-deep);font-size:1.1875rem;margin-bottom:1.4em}
+.sec-h{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);line-height:1.08;color:var(--type);margin-bottom:.6em}
 
+/* member benefits */
+.benefits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(28px,6vw,88px)}
+.benefits li{padding-top:1.1em;border-top:1px solid var(--rule)}
+.benefits h3{font-size:clamp(1.5rem,1.25rem + .9vw,1.9rem);color:var(--type);margin-bottom:.4em}
+.benefits p{color:var(--type-soft);font-size:1.1875rem;margin:0;max-width:44ch}
+
+/* from the community */
+.community{background:radial-gradient(50% 70% at 100% 100%, rgba(47,109,181,.20), transparent 70%), var(--night)}
+.community .sec-h{color:var(--cream)}
+.intro{color:var(--mist);max-width:52ch;margin-bottom:clamp(32px,4vw,52px)}
+.cases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.case{display:flex;flex-direction:column;padding:clamp(22px,2.5vw,32px);border:1px solid rgba(224,184,106,.35);border-radius:4px;background:rgba(6,20,40,.35)}
+.case .tag{font-style:italic;color:var(--gold);font-size:1.0625rem;margin-bottom:.6em}
+.case h3{font-size:clamp(1.5rem,1.25rem + .9vw,1.9rem);color:var(--cream);margin-bottom:.5em}
+.case p{color:var(--mist);font-size:1.125rem;flex:1}
+.case a{align-self:flex-start;color:var(--cream);text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.22em;text-decoration-thickness:1px}
+.case a:hover{text-decoration-color:var(--gold)}
+
+/* mission + audience */
 .mission{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem);line-height:1.25;color:var(--type);max-width:32ch;margin:0 0 clamp(48px,6vw,80px);text-wrap:balance}
-.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin:0 0 clamp(56px,7vw,96px);padding:clamp(28px,4vw,44px) 0 0;border-top:1px solid var(--rule)}
-.pillar h3{font-size:clamp(1.7rem,1.3rem + 1.2vw,2.2rem);color:var(--type);margin-bottom:.5em}
-.pillar p{color:var(--type-soft);font-size:1.1875rem;margin:0}
-
 .two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,88px);align-items:start;padding-top:clamp(40px,5vw,56px);border-top:1px solid var(--rule)}
-.two h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);line-height:1.08;color:var(--type)}
 .points{margin:0 0 1.4em;padding-left:1.1em;max-width:var(--measure)}
 .points li{margin-bottom:.6em;font-size:1.25rem}
 .points li::marker{color:var(--gold-deep)}
 .founder{max-width:var(--measure);font-size:1.1875rem;color:var(--type-soft);font-style:italic;margin:0}
 
-/* ---------- join ---------- */
-.join{background:
-radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
-.join .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:start}
+/* join */
+.join{background:radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
+.join .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,88px);align-items:start}
 .join h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);margin-bottom:.5em;color:var(--cream)}
 .join p{color:var(--mist);max-width:44ch}
-.ways{list-style:none;margin:0;padding:0;display:grid;gap:1.6em}
-.ways li{padding-left:1.1em;border-left:2px solid rgba(224,184,106,.6)}
-.ways b{display:block;font-weight:500;color:var(--cream);font-size:1.3125rem;margin-bottom:.15em}
-.ways span{display:block;color:var(--mist);font-size:1.0625rem;margin-bottom:.7em}
+.more{margin-top:2em;padding-top:1.2em;border-top:1px solid rgba(224,184,106,.35);max-width:44ch}
+.more .actions{margin-top:.4em}
+.form{display:grid;gap:1.1em}
+.field{display:grid;gap:.35em}
+.field label{font-style:italic;color:var(--mist);font-size:1.0625rem}
+.field input,.field select{font:inherit;font-size:1.1875rem;color:var(--cream);background:rgba(6,20,40,.6);border:1px solid rgba(242,234,217,.4);border-radius:3px;padding:.55em .7em;width:100%}
+.field select option{color:#13233b}
+.field input:focus,.field select:focus{outline:2px solid var(--gold);outline-offset:2px;border-color:var(--gold)}
+.choice{border:0;margin:0;padding:0;display:grid;gap:.5em}
+.choice legend{padding:0;font-style:italic;color:var(--mist);font-size:1.0625rem;margin-bottom:.35em}
+.choice label{display:flex;align-items:center;gap:.6em;font-size:1.1875rem;color:var(--cream);cursor:pointer}
+.choice input{width:1.15em;height:1.15em;accent-color:var(--gold);margin:0}
+.hint{font-size:1rem;color:var(--mist);margin:0}
+.fine{font-size:1rem;color:var(--mist);margin:0;max-width:52ch}
+.msg{min-height:1.6em;margin:0;font-size:1.125rem;color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 footer{background:#040e1d;color:#8e9bad;font-size:1rem;font-variant-numeric:lining-nums}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:26px;padding-bottom:30px}
 footer a{text-decoration-color:rgba(142,155,173,.5)}
 
 /* ---------- small screens ---------- */
+@media (max-width:760px){
+.cases{grid-template-columns:1fr}
+}
 @media (max-width:860px){
-.two,.join .wrap{grid-template-columns:1fr}
-.pillars{grid-template-columns:1fr}
+.two,.join .wrap,.benefits{grid-template-columns:1fr}
 .hero .wrap{padding-top:96px}
 }
 @media (max-width:620px){
@@ -180,13 +208,73 @@ html{scroll-behavior:auto}
 <main id="main">
 <section class="hero" id="top">
 <div class="wrap">
-<p class="status">A community for pharmacology professionals</p>
+<p class="status">Translating Science Together</p>
 <h1>Pharmacology Insiders</h1>
-<p class="lede">Translating Science Together</p>
+<p class="lede">The professional community for pharmacology, drug discovery and drug development.</p>
+<p class="sublede">Practical scientific insights, real-world R&amp;D case studies, career development and connections across academia and industry.</p>
 <div class="actions">
-<a class="btn" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">Follow on LinkedIn</a>
-<a class="textlink" href="#about">Read our mission</a>
+<a class="btn big" href="#join">Join Pharmacology Insiders</a>
+<a class="textlink" href="blog.html">Explore scientific insights</a>
+<a class="textlink" href="#newsletter">Subscribe to the newsletter</a>
 </div>
+</div>
+</section>
+
+<section class="paper section" id="members" aria-labelledby="members-h">
+<div class="wrap">
+<h2 id="members-h" class="eyebrow">Why join</h2>
+<h2 class="sec-h">What you get as a member</h2>
+<ul class="benefits">
+<li>
+<h3>Real-world drug discovery case studies</h3>
+<p>How projects actually went: the data, the decisions and what the team learned, including when things did not work.</p>
+</li>
+<li>
+<h3>Expert discussions and problem-solving</h3>
+<p>Bring a hard question about a target, an assay or a result, and get perspectives from scientists across academia and industry.</p>
+</li>
+<li>
+<h3>Career guidance and industry perspectives</h3>
+<p>Honest advice on moving between academia and industry, and on what employers look for.</p>
+</li>
+<li>
+<h3>Invitations to webinars, workshops and professional events</h3>
+<p>Members hear first about sessions and events as they are announced.</p>
+</li>
+</ul>
+</div>
+</section>
+
+<section class="community section" id="examples" aria-labelledby="examples-h">
+<div class="wrap">
+<h2 id="examples-h" class="sec-h">See the work, not just the mission</h2>
+<p class="intro">A few recent examples from LinkedIn: case puzzles, strategy dilemmas, clinical pharmacology stories and long-form articles. See if this is the kind of conversation you want to be part of.</p>
+<ul class="cases">
+<li class="case">
+<span class="tag">The Drug Detective #1</span>
+<h3>The Case of the Disappearing Drug</h3>
+<p>A patient on a stable dose suddenly has low drug levels and no clinical response, and the only clue is a new medication started two weeks earlier. Can you solve it?</p>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7498376263582171137" rel="noopener" target="_blank">Solve the case on LinkedIn</a>
+</li>
+<li class="case">
+<span class="tag">Drug Discovery Boardroom #3</span>
+<h3>You are the CEO, with $800 million to spend</h3>
+<p>One oncology asset, three strategies: best-in-class, first-in-class or a combination. Which would you choose, and what is your single biggest reason?</p>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7489609892807262208" rel="noopener" target="_blank">Make the call on LinkedIn</a>
+</li>
+<li class="case">
+<span class="tag">If Drugs Could Talk #3</span>
+<h3>Warfarin: the most dangerous dose is the combination</h3>
+<p>Warfarin tells its side of the story: stable for months, then a second drug changes everything. Pharmacology is about how drugs behave in the presence of each other.</p>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7465446476664471552" rel="noopener" target="_blank">Read the post on LinkedIn</a>
+</li>
+<li class="case">
+<span class="tag">Article</span>
+<h3>Your Gut, Your Pharmacologist</h3>
+<p>How gut bacteria can activate, deactivate or even create drugs inside us, and why pharmacomicrobiomics is the natural next step after pharmacogenomics.</p>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7389291324035883008" rel="noopener" target="_blank">Read the article on LinkedIn</a>
+</li>
+</ul>
 </div>
 </section>
 
@@ -194,24 +282,8 @@ html{scroll-behavior:auto}
 <div class="wrap">
 <h2 id="about-h" class="eyebrow">Our mission</h2>
 <p class="mission">To connect, educate, and empower pharmacology professionals by fostering collaboration between academia and industry, accelerating the translation of research into real-world therapeutic solutions.</p>
-
-<div class="pillars">
-<div class="pillar">
-<h3>Connect</h3>
-<p>Meet pharmacologists, drug discovery scientists and clinicians across academia and industry, and build the relationships that move careers and projects forward.</p>
-</div>
-<div class="pillar">
-<h3>Educate</h3>
-<p>Plain-language explainers, practical career guidance and honest discussion of where drug discovery is heading, including the role of AI.</p>
-</div>
-<div class="pillar">
-<h3>Empower</h3>
-<p>Mentorship and shared experience for researchers moving from academia to industry, and for professionals growing within it.</p>
-</div>
-</div>
-
 <div class="two">
-<h2>Who it is for</h2>
+<h2 class="sec-h">Who it is for</h2>
 <div>
 <ul class="points">
 <li>Students and early-career researchers planning their path into industry</li>
@@ -228,26 +300,58 @@ html{scroll-behavior:auto}
 <section class="join section" id="join" aria-labelledby="join-h">
 <div class="wrap">
 <div>
-<h2 id="join-h">Join the conversation</h2>
-<p>Translating science takes many hands. Pick the way that suits you, and read the <a class="textlink" href="blog.html">blog</a> for articles from the community.</p>
+<h2 id="join-h">Join Pharmacology Insiders</h2>
+<p>Tell us a little about yourself and we will send your invitation to the community. It takes under a minute.</p>
+<div class="more" id="newsletter">
+<p>Not ready to join? Stay in touch instead.</p>
+<div class="actions">
+<a class="btn line-dark js-news" href="#newsletter">Subscribe to the newsletter</a>
+<a class="textlink" href="blog.html">Explore scientific insights</a>
 </div>
-<ul class="ways">
-<li>
-<b>LinkedIn</b>
-<span>Follow the company page for updates and discussion.</span>
-<a class="btn" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">Follow on LinkedIn</a>
-</li>
-<li>
-<b>WhatsApp community</b>
-<span>Send a short email and you will receive an invitation to the community group.</span>
-<a class="btn line-dark js-whatsapp" href="#join">Request an invitation</a>
-</li>
-<li>
-<b>Newsletter</b>
-<span>Occasional notes from Pharmacology Insiders, by email.</span>
-<a class="btn line-dark js-news" href="#join">Get the newsletter</a>
-</li>
-</ul>
+</div>
+</div>
+
+<form class="form" id="join-form" novalidate>
+<div class="field">
+<label for="f-name">Name</label>
+<input id="f-name" name="name" type="text" autocomplete="name" required>
+</div>
+<div class="field">
+<label for="f-email">Email</label>
+<input id="f-email" name="email" type="email" autocomplete="email" required>
+</div>
+<div class="field">
+<label for="f-role">I am a</label>
+<select id="f-role" name="role" required>
+<option value="">Choose one</option>
+<option>Student or early-career researcher</option>
+<option>Academic researcher</option>
+<option>Industry scientist</option>
+<option>Clinician</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field">
+<label for="f-org">Organisation or institution</label>
+<input id="f-org" name="organisation" type="text" autocomplete="organization">
+</div>
+<fieldset class="choice">
+<legend>Would you like to be added to the WhatsApp community group?</legend>
+<label><input type="radio" name="whatsapp" value="Yes"> Yes, please add me</label>
+<label><input type="radio" name="whatsapp" value="No" checked> No, thanks</label>
+</fieldset>
+<div class="field" id="phone-field" hidden>
+<label for="f-phone">WhatsApp phone number</label>
+<input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210">
+<p class="hint">Include your country code. We will use it only to add you to the group.</p>
+</div>
+<div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="actions">
+<button class="btn big" type="submit">Join Pharmacology Insiders</button>
+</div>
+<p class="msg" id="join-msg" role="status" aria-live="polite"></p>
+<p class="fine">Your details are used only to send your invitation and community updates. If you give a phone number, it is used only to add you to the WhatsApp group. You can also follow us on <a class="textlink" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">LinkedIn</a>.</p>
+</form>
 </div>
 </section>
 </main>
@@ -263,11 +367,63 @@ html{scroll-behavior:auto}
 (function(){
 // Address is assembled here so spam bots reading the page source don't find it.
 var u='nagaraj', d='nagarajkulkarni.com', addr=u+'@'+d;
-function mail(subject,body){return 'mailto:'+addr+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);}
-var wa=mail('Pharmacology Insiders: WhatsApp invitation','Hello,\n\nPlease send me an invitation to the Pharmacology Insiders WhatsApp community.\n\nName:\nOrganisation or institution:\nRole:\n');
-var news=mail('Pharmacology Insiders: newsletter','Hello,\n\nPlease add me to the Pharmacology Insiders newsletter.\n\nName:\n');
-document.querySelectorAll('.js-whatsapp').forEach(function(a){a.href=wa;});
+
+// To receive sign-ups straight into a form service (for example a Formspree form
+// URL), paste its endpoint below. While this is empty, the form opens the visitor's
+// email app with their answers filled in, addressed to the address above.
+var FORM_ENDPOINT='';
+
+var news='mailto:'+addr+'?subject='+encodeURIComponent('Pharmacology Insiders: newsletter')+
+'&body='+encodeURIComponent('Hello,\n\nPlease add me to the Pharmacology Insiders newsletter.\n\nName:\n');
 document.querySelectorAll('.js-news').forEach(function(a){a.href=news;});
+
+var form=document.getElementById('join-form'), msg=document.getElementById('join-msg');
+var phoneField=document.getElementById('phone-field');
+function wantsWhatsapp(){var r=form.querySelector('input[name="whatsapp"]:checked');return !!r&&r.value==='Yes';}
+form.querySelectorAll('input[name="whatsapp"]').forEach(function(r){
+r.addEventListener('change',function(){
+phoneField.hidden=!wantsWhatsapp();
+if(wantsWhatsapp()){form.elements.phone.focus();}
+});
+});
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var f=form.elements;
+if(f.website.value){return;} // honeypot: bots fill this in
+if(!f.name.value.trim()||!f.email.value.trim()||!f.role.value){
+msg.textContent='Please add your name, email and role.';
+return;
+}
+if(!/^\S+@\S+\.\S+$/.test(f.email.value.trim())){
+msg.textContent='Please check your email address.';
+return;
+}
+var wa=wantsWhatsapp(), phone=f.phone.value.trim();
+if(wa && phone.replace(/\D/g,'').length<8){
+msg.textContent='Please add your WhatsApp number with country code, or choose No.';
+return;
+}
+var data={name:f.name.value.trim(),email:f.email.value.trim(),role:f.role.value,organisation:f.organisation.value.trim(),
+whatsapp:wa?'Yes':'No',phone:wa?phone:''};
+if(FORM_ENDPOINT){
+msg.textContent='Sending...';
+fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+.then(function(r){
+if(!r.ok){throw new Error('bad');}
+form.reset();phoneField.hidden=true;
+msg.textContent='Thank you. Your invitation is on its way.';
+})
+.catch(function(){msg.textContent='Something went wrong. Please email '+addr+' and we will add you.';});
+return;
+}
+var body='Hello,\n\nPlease send me an invitation to Pharmacology Insiders.\n\nName: '+data.name+'\nEmail: '+data.email+'\nI am a: '+data.role+'\nOrganisation: '+data.organisation+
+'\nWhatsApp group: '+data.whatsapp+(wa?'\nWhatsApp number: '+data.phone:'')+'\n';
+var url='mailto:'+addr+'?subject='+encodeURIComponent('Join Pharmacology Insiders')+'&body='+encodeURIComponent(body);
+form.setAttribute('data-mailto',url);
+msg.textContent='Your email app will open with your details. Press send to finish joining.';
+window.location.href=url;
+});
+
 var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
 })();
 </script>
