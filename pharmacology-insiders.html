@@ -350,7 +350,7 @@ html{scroll-behavior:auto}
 <button class="btn big" type="submit">Join Pharmacology Insiders</button>
 </div>
 <p class="msg" id="join-msg" role="status" aria-live="polite"></p>
-<p class="fine">Your details are used only to send your invitation and community updates. If you give a phone number, it is used only to add you to the WhatsApp group. You can also follow us on <a class="textlink" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">LinkedIn</a>.</p>
+<p class="fine">Your details are used only to send your invitation and community updates. If you give a phone number, it is used only to add you to the WhatsApp group. Sign-ups are delivered to our inbox by our form provider, FormSubmit. You can also follow us on <a class="textlink" href="https://www.linkedin.com/company/pharmacology-insiders" rel="noopener" target="_blank">LinkedIn</a>.</p>
 </form>
 </div>
 </section>
@@ -368,10 +368,11 @@ html{scroll-behavior:auto}
 // Address is assembled here so spam bots reading the page source don't find it.
 var u='nagaraj', d='nagarajkulkarni.com', addr=u+'@'+d;
 
-// To receive sign-ups straight into a form service (for example a Formspree form
-// URL), paste its endpoint below. While this is empty, the form opens the visitor's
-// email app with their answers filled in, addressed to the address above.
-var FORM_ENDPOINT='';
+// Sign-ups are delivered to the site owner's inbox by FormSubmit (formsubmit.co).
+// The first submission ever made triggers a one-time activation email to the owner.
+// After activating, FormSubmit issues a private alias; replace addr below with
+// that alias in FORM_ENDPOINT so the real address is not used in the request.
+var FORM_ENDPOINT='https://formsubmit.co/ajax/'+addr;
 
 var news='mailto:'+addr+'?subject='+encodeURIComponent('Pharmacology Insiders: newsletter')+
 '&body='+encodeURIComponent('Hello,\n\nPlease add me to the Pharmacology Insiders newsletter.\n\nName:\n');
@@ -379,7 +380,20 @@ document.querySelectorAll('.js-news').forEach(function(a){a.href=news;});
 
 var form=document.getElementById('join-form'), msg=document.getElementById('join-msg');
 var phoneField=document.getElementById('phone-field');
+var submitBtn=form.querySelector('button[type="submit"]');
 function wantsWhatsapp(){var r=form.querySelector('input[name="whatsapp"]:checked');return !!r&&r.value==='Yes';}
+function say(text){msg.textContent=text;}
+function sayFallback(prefix,data){
+// Show a way to join that does not depend on the form: a ready-made email.
+msg.textContent=prefix+' ';
+var body='Hello,\n\nPlease send me an invitation to Pharmacology Insiders.\n\nName: '+data.name+'\nEmail: '+data.email+'\nI am a: '+data.role+'\nOrganisation: '+data.organisation+
+'\nWhatsApp group: '+data.whatsapp+(data.phone?'\nWhatsApp number: '+data.phone:'')+'\n';
+var a=document.createElement('a');
+a.className='textlink';
+a.href='mailto:'+addr+'?subject='+encodeURIComponent('Join Pharmacology Insiders')+'&body='+encodeURIComponent(body);
+a.textContent='Email us instead ('+addr+')';
+msg.appendChild(a);
+}
 form.querySelectorAll('input[name="whatsapp"]').forEach(function(r){
 r.addEventListener('change',function(){
 phoneField.hidden=!wantsWhatsapp();
@@ -391,37 +405,46 @@ e.preventDefault();
 var f=form.elements;
 if(f.website.value){return;} // honeypot: bots fill this in
 if(!f.name.value.trim()||!f.email.value.trim()||!f.role.value){
-msg.textContent='Please add your name, email and role.';
+say('Please add your name, email and role.');
 return;
 }
 if(!/^\S+@\S+\.\S+$/.test(f.email.value.trim())){
-msg.textContent='Please check your email address.';
+say('Please check your email address.');
 return;
 }
 var wa=wantsWhatsapp(), phone=f.phone.value.trim();
 if(wa && phone.replace(/\D/g,'').length<8){
-msg.textContent='Please add your WhatsApp number with country code, or choose No.';
+say('Please add your WhatsApp number with country code, or choose No.');
 return;
 }
 var data={name:f.name.value.trim(),email:f.email.value.trim(),role:f.role.value,organisation:f.organisation.value.trim(),
 whatsapp:wa?'Yes':'No',phone:wa?phone:''};
-if(FORM_ENDPOINT){
-msg.textContent='Sending...';
-fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){
-if(!r.ok){throw new Error('bad');}
-form.reset();phoneField.hidden=true;
-msg.textContent='Thank you. Your invitation is on its way.';
+var payload={
+_subject:'New Pharmacology Insiders sign-up: '+data.name,
+_template:'table',
+_captcha:'false',
+Name:data.name,
+Email:data.email,
+Role:data.role,
+Organisation:data.organisation||'(not given)',
+'WhatsApp group':data.whatsapp,
+'WhatsApp number':data.phone||'(not requested)'
+};
+say('Sending...');
+submitBtn.disabled=true;
+fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+.then(function(r){return r.json().then(function(j){return {ok:r.ok,body:j};});})
+.then(function(res){
+var okFlag=res.ok && res.body && (res.body.success===true||res.body.success==='true');
+if(!okFlag){throw new Error('not accepted');}
+form.reset();
+phoneField.hidden=true;
+say(wa?'Thank you. You are on the list, and we will send your WhatsApp group invitation shortly.':'Thank you. You are on the list, and we will be in touch soon.');
 })
-.catch(function(){msg.textContent='Something went wrong. Please email '+addr+' and we will add you.';});
-return;
-}
-var body='Hello,\n\nPlease send me an invitation to Pharmacology Insiders.\n\nName: '+data.name+'\nEmail: '+data.email+'\nI am a: '+data.role+'\nOrganisation: '+data.organisation+
-'\nWhatsApp group: '+data.whatsapp+(wa?'\nWhatsApp number: '+data.phone:'')+'\n';
-var url='mailto:'+addr+'?subject='+encodeURIComponent('Join Pharmacology Insiders')+'&body='+encodeURIComponent(body);
-form.setAttribute('data-mailto',url);
-msg.textContent='Your email app will open with your details. Press send to finish joining.';
-window.location.href=url;
+.catch(function(){
+sayFallback('Sorry, we could not send that just now.',data);
+})
+.then(function(){submitBtn.disabled=false;});
 });
 
 var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
