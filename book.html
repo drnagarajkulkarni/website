@@ -203,6 +203,17 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .contact{background:
   radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:end}
+.form{display:grid;gap:1em;margin-top:1.4em;max-width:30rem}
+.field{display:grid;gap:.35em}
+.field label{font-style:italic;color:var(--mist);font-size:1.0625rem}
+.field label span{opacity:.8}
+.field input{font:inherit;font-size:1.1875rem;color:var(--cream);background:rgba(6,20,40,.6);border:1px solid rgba(242,234,217,.4);border-radius:3px;padding:.55em .7em;width:100%}
+.field input:focus{outline:2px solid var(--gold);outline-offset:2px;border-color:var(--gold)}
+.field.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form button.btn{cursor:pointer}
+.form button.btn:disabled{opacity:.6;cursor:wait}
+.msg{margin:0;min-height:1.6em;color:var(--cream) !important;font-size:1.0625rem}
+.msg a{color:var(--cream)}
 .contact h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);margin-bottom:.5em;color:var(--cream)}
 .contact p{color:var(--mist);max-width:44ch}
 .reach{border-left:1px solid rgba(224,184,106,.45);padding-left:clamp(20px,3vw,36px)}
@@ -268,7 +279,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <p class="subtitle">A Story of Science, Hope, and the Long Road to Medicine</p>
         <p class="byline">By Dr. Nagaraj Kulkarni<span>Foreword by Dr. Shridhar Narayanan</span></p>
         <div class="actions">
-          <a class="btn js-launch" href="#contact">Email to join the launch list</a>
+          <a class="btn" href="#launch-form">Join the launch list</a>
           <a class="textlink" href="#book">Read about the book</a>
         </div>
       </div>
@@ -353,8 +364,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="wrap">
       <div>
         <h2 id="contact-h">Hear when the book is out</h2>
-        <p>Send a short email and you&rsquo;ll get a note the day <i>The Molecule That Lived</i> is available. The same address is open for speaking invitations, interviews and publishing enquiries.</p>
-        <a class="btn js-launch" href="#contact">Email to join the launch list</a>
+        <p>Leave your name and email and you&rsquo;ll get a note the day <i>The Molecule That Lived</i> is available. The same address is open for speaking invitations, interviews and publishing enquiries.</p>
+        <form class="form" id="launch-form" novalidate>
+          <div class="field"><label for="l-name">Your name</label><input id="l-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="l-email">Email</label><input id="l-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="l-city">City or country <span>(optional)</span></label><input id="l-city" name="city" type="text" autocomplete="address-level2"></div>
+          <div class="field hp" aria-hidden="true"><label for="l-web">Leave this empty</label><input id="l-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div><button class="btn" type="submit">Join the launch list</button></div>
+          <p class="msg" id="launch-msg" role="status" aria-live="polite"></p>
+        </form>
       </div>
       <div class="reach">
         <dl>
@@ -379,9 +397,32 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 (function(){
   // Address is assembled here so spam bots reading the page source don't find it.
   var u='nagaraj', d='nagarajkulkarni.com', addr=u+'@'+d;
-  var launch='mailto:'+addr+'?subject='+encodeURIComponent('Launch list: The Molecule That Lived')+
-    '&body='+encodeURIComponent('Hello Dr. Kulkarni,\n\nPlease let me know when The Molecule That Lived is available.\n\nName:\nCity:\n');
-  document.querySelectorAll('.js-launch').forEach(function(a){a.href=launch;});
+  // Sign-ups are delivered to the owner's inbox by FormSubmit; the string is its private alias for the address.
+  var FORM_ENDPOINT='https://formsubmit.co/ajax/8996188c390b95157dbc6bc27bfff801';
+  var lf=document.getElementById('launch-form'), lm=document.getElementById('launch-msg');
+  lf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=lf.elements, btn=lf.querySelector('button[type="submit"]');
+    if(f.website.value){return;}
+    var name=f.name.value.trim(), email=f.email.value.trim(), city=f.city.value.trim();
+    if(!name||!email){lm.textContent='Please add your name and email.';return;}
+    if(!/^\S+@\S+\.\S+$/.test(email)){lm.textContent='Please check your email address.';return;}
+    lm.textContent='Sending...'; btn.disabled=true;
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({_subject:'Launch list: The Molecule That Lived',_template:'table',_captcha:'false',Name:name,Email:email,City:city})})
+    .then(function(r){return r.json().then(function(j){return {ok:r.ok,body:j};});})
+    .then(function(res){
+      if(!(res.ok&&res.body&&(res.body.success===true||res.body.success==='true'))){throw new Error('not accepted');}
+      lf.reset(); lm.textContent='Thank you. You are on the launch list, and I will write the day the book is out.';
+    })
+    .catch(function(){
+      lm.textContent='Sorry, that did not go through. ';
+      var a=document.createElement('a');
+      a.href='mailto:'+addr+'?subject='+encodeURIComponent('Launch list: The Molecule That Lived')+'&body='+encodeURIComponent('Please let me know when The Molecule That Lived is available.\n\nName: '+name+'\nEmail: '+email+'\nCity: '+city+'\n');
+      a.textContent='Email me instead ('+addr+')'; lm.appendChild(a);
+    })
+    .then(function(){btn.disabled=false;});
+  });
   document.querySelectorAll('.js-mail').forEach(function(a){a.href='mailto:'+addr;a.textContent=addr;});
   var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
 
