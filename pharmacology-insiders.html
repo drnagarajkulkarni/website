@@ -369,10 +369,9 @@ html{scroll-behavior:auto}
 var u='nagaraj', d='nagarajkulkarni.com', addr=u+'@'+d;
 
 // Sign-ups are delivered to the site owner's inbox by FormSubmit (formsubmit.co).
-// The first submission ever made triggers a one-time activation email to the owner.
-// After activating, FormSubmit issues a private alias; replace addr below with
-// that alias in FORM_ENDPOINT so the real address is not used in the request.
-var FORM_ENDPOINT='https://formsubmit.co/ajax/'+addr;
+// The long string below is FormSubmit's private alias for the owner's address, so
+// the address itself is not used in the request.
+var FORM_ENDPOINT='https://formsubmit.co/ajax/8996188c390b95157dbc6bc27bfff801';
 
 var news='mailto:'+addr+'?subject='+encodeURIComponent('Pharmacology Insiders: newsletter')+
 '&body='+encodeURIComponent('Hello,\n\nPlease add me to the Pharmacology Insiders newsletter.\n\nName:\n');
