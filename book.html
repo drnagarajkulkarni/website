@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Molecule That Lived | A novel by Dr. Nagaraj Kulkarni</title>
-<meta name="description" content="The Molecule That Lived: A Story of Science, Hope, and the Long Road to Medicine. The debut novel by pharmacologist and drug discovery scientist Dr. Nagaraj Kulkarni, with a foreword by Dr. Shridhar Narayanan. Coming soon.">
+<meta name="description" content="The Molecule That Lived: A Story of Science, Hope, and the Long Road to Medicine. The debut novel by pharmacologist and drug discovery scientist Dr. Nagaraj Kulkarni, with a foreword by Dr. Shridhar Narayanan. Now available on Amazon in paperback and Kindle, in India and worldwide.">
 <link rel="canonical" href="https://www.nagarajkulkarni.com/book.html">
 <meta name="theme-color" content="#061428">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nagarajkulkarni.com/book.html">
 <meta property="og:title" content="The Molecule That Lived | A novel by Dr. Nagaraj Kulkarni">
-<meta property="og:description" content="What does it take for a molecule to become a medicine? A novel about the scientists, the patients and the long road in between. Coming soon.">
+<meta property="og:description" content="What does it take for a molecule to become a medicine? A novel about the scientists, the patients and the long road in between. Now available on Amazon.">
 <meta property="og:image" content="https://www.nagarajkulkarni.com/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Molecule That Lived | A novel by Dr. Nagaraj Kulkarni">
-<meta name="twitter:description" content="What does it take for a molecule to become a medicine? Coming soon.">
+<meta name="twitter:description" content="What does it take for a molecule to become a medicine? Now available on Amazon.">
 <meta name="twitter:image" content="https://www.nagarajkulkarni.com/share.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -36,10 +36,17 @@
       "name": "The Molecule That Lived",
       "alternateName": "The Molecule That Lived: A Story of Science, Hope, and the Long Road to Medicine",
       "isbn": "978-93-5943-991-4",
+      "datePublished": "2026-10-25",
       "genre": "Fiction",
       "inLanguage": "en",
       "image": "https://www.nagarajkulkarni.com/cover-1000.jpg",
       "author": { "@id": "https://www.nagarajkulkarni.com/#author" },
+      "workExample": [
+        { "@type": "Book", "bookFormat": "https://schema.org/Paperback", "isbn": "978-93-5943-991-4", "name": "The Molecule That Lived (Paperback)",
+          "offers": [ { "@type": "Offer", "price": "499", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://www.amazon.in/dp/9359439916" }, { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.amazon.com/dp/9359439916" } ] },
+        { "@type": "Book", "bookFormat": "https://schema.org/EBook", "name": "The Molecule That Lived (Kindle)",
+          "offers": [ { "@type": "Offer", "price": "284", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://www.amazon.in/dp/B0HNKMMFN2" }, { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.amazon.com/dp/B0HNKMMFN2" } ] }
+      ],
       "description": "The story of patients waiting for answers and a small team of scientists determined to discover a medicine for a disease the pharmaceutical industry has largely overlooked."
     },
     {
@@ -199,6 +206,22 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .bio p{font-size:1.1875rem}
 .bio .btn{margin-top:.6em}
 
+/* ---------- buy options ---------- */
+.buy{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,20px)}
+.buyopt{display:grid;gap:.15em;height:100%;padding:1.1em 1.3em 1.15em;border:1px solid rgba(224,184,106,.55);border-radius:4px;background:rgba(6,20,40,.45);color:var(--cream);text-decoration:none;transition:background-color .2s ease,border-color .2s ease}
+.buyopt:hover{background:rgba(224,184,106,.14);border-color:var(--gold)}
+.buyopt .where{font-style:italic;color:var(--gold);font-size:1.0625rem}
+.buyopt b{font-weight:500;font-size:1.5rem;line-height:1.15}
+.buyopt .price{font-size:1.3125rem;font-variant-numeric:lining-nums}
+.buyopt .price small{display:block;font-size:1rem;color:var(--mist);font-style:italic}
+.buyopt .go{margin-top:.5em;color:var(--gold);font-size:1.0625rem;text-decoration:underline;text-decoration-color:rgba(224,184,106,.6);text-underline-offset:.22em;text-decoration-thickness:1px}
+@media (max-width:520px){.buy{grid-template-columns:1fr}}
+.buyband{background:radial-gradient(55% 70% at 0% 100%, rgba(47,109,181,.22), transparent 70%),var(--night)}
+.buyband .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.buyband h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);color:var(--cream);margin-bottom:.5em}
+.buyband .eyebrow{color:var(--gold);margin-bottom:.8em}
+.buyband p{color:var(--mist);max-width:40ch}
+@media (max-width:860px){.buyband .wrap{grid-template-columns:1fr}}
 /* ---------- contact ---------- */
 .contact{background:
   radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
@@ -262,9 +285,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       <a href="#foreword">Foreword</a>
       <a href="#author">Author</a>
       <a class="keep" href="pharmacology-insiders.html">Pharmacology Insiders</a>
-      <a class="keep" href="blog.html">Blog</a>
-      <a class="keep" href="publications.html">Publications</a>
+      <a href="blog.html">Blog</a>
+      <a href="publications.html">Publications</a>
       <a href="talks.html">Talks</a>
+      <a class="keep" href="#buy">Buy</a>
       <a class="keep" href="#contact">Contact</a>
     </nav>
   </div>
@@ -274,12 +298,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <section class="hero" id="top">
     <div class="wrap">
       <div>
-        <p class="status">A debut novel, coming soon</p>
+        <p class="status">A debut novel, out now</p>
         <h1>The Molecule That Lived</h1>
         <p class="subtitle">A Story of Science, Hope, and the Long Road to Medicine</p>
         <p class="byline">By Dr. Nagaraj Kulkarni<span>Foreword by Dr. Shridhar Narayanan</span></p>
         <div class="actions">
-          <a class="btn" href="#launch-form">Join the launch list</a>
+          <a class="btn" href="#buy">Buy the book</a>
           <a class="textlink" href="#book">Read about the book</a>
         </div>
       </div>
@@ -288,6 +312,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
              sizes="(max-width:860px) 260px, 430px" width="600" height="851"
              alt="Front cover of The Molecule That Lived by Dr. Nagaraj Kulkarni: glass molecules in blue and gold light above scientists working in a laboratory.">
       </figure>
+    </div>
+  </section>
+
+  <section class="buyband section" id="buy" aria-labelledby="buy-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Out now</p>
+        <h2 id="buy-h">Get your copy</h2>
+        <p>Available on Amazon as a paperback and on Kindle, in India and worldwide. Kindle readers in India can also read it free with Kindle Unlimited.</p>
+      </div>
+      <ul class="buy">
+<li><a class="buyopt" href="https://www.amazon.in/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, India: ₹499. Buy on Amazon.in"><span class="where">India</span><b>Paperback</b><span class="price">₹499</span><span class="go">Buy on Amazon.in</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.in/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, India: ₹284, or free on Kindle Unlimited. Buy on Amazon.in"><span class="where">India</span><b>Kindle</b><span class="price">₹284<small>or free on Kindle Unlimited</small></span><span class="go">Buy on Amazon.in</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.com/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, Worldwide: $9.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Paperback</b><span class="price">$9.99</span><span class="go">Buy on Amazon.com</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.com/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, Worldwide: $2.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Kindle</b><span class="price">$2.99</span><span class="go">Buy on Amazon.com</span></a></li>
+</ul>
     </div>
   </section>
 
@@ -303,7 +343,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
           <dl class="facts">
             <dt>Foreword</dt><dd>Dr. Shridhar Narayanan</dd>
             <dt>ISBN</dt><dd>978-93-5943-991-4</dd>
-            <dt>Release</dt><dd>Coming soon</dd>
+            <dt>Released</dt><dd>25 October 2026</dd>
+            <dt>Formats</dt><dd>Paperback and Kindle</dd>
           </dl>
         </div>
       </div>
@@ -363,14 +404,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <section class="contact section" id="contact" aria-labelledby="contact-h">
     <div class="wrap">
       <div>
-        <h2 id="contact-h">Hear when the book is out</h2>
-        <p>Leave your name and email and you&rsquo;ll get a note the day <i>The Molecule That Lived</i> is available. The same address is open for speaking invitations, interviews and publishing enquiries.</p>
+        <h2 id="contact-h">Stay in touch</h2>
+        <p>Leave your name and email for news about the book, new writing and events. The same address is open for speaking invitations, interviews and publishing enquiries.</p>
         <form class="form" id="launch-form" novalidate>
           <div class="field"><label for="l-name">Your name</label><input id="l-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="l-email">Email</label><input id="l-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="l-city">City or country <span>(optional)</span></label><input id="l-city" name="city" type="text" autocomplete="address-level2"></div>
           <div class="field hp" aria-hidden="true"><label for="l-web">Leave this empty</label><input id="l-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <div><button class="btn" type="submit">Join the launch list</button></div>
+          <div><button class="btn" type="submit">Keep me posted</button></div>
           <p class="msg" id="launch-msg" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -409,16 +450,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     if(!/^\S+@\S+\.\S+$/.test(email)){lm.textContent='Please check your email address.';return;}
     lm.textContent='Sending...'; btn.disabled=true;
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({_subject:'Launch list: The Molecule That Lived',_template:'table',_captcha:'false',Name:name,Email:email,City:city})})
+      body:JSON.stringify({_subject:'Updates list: The Molecule That Lived',_template:'table',_captcha:'false',Name:name,Email:email,City:city})})
     .then(function(r){return r.json().then(function(j){return {ok:r.ok,body:j};});})
     .then(function(res){
       if(!(res.ok&&res.body&&(res.body.success===true||res.body.success==='true'))){throw new Error('not accepted');}
-      lf.reset(); lm.textContent='Thank you. You are on the launch list, and I will write the day the book is out.';
+      lf.reset(); lm.textContent='Thank you. You are on the list, and I will send news about the book and new writing.';
     })
     .catch(function(){
       lm.textContent='Sorry, that did not go through. ';
       var a=document.createElement('a');
-      a.href='mailto:'+addr+'?subject='+encodeURIComponent('Launch list: The Molecule That Lived')+'&body='+encodeURIComponent('Please let me know when The Molecule That Lived is available.\n\nName: '+name+'\nEmail: '+email+'\nCity: '+city+'\n');
+      a.href='mailto:'+addr+'?subject='+encodeURIComponent('Updates list: The Molecule That Lived')+'&body='+encodeURIComponent('Please let me know when The Molecule That Lived is available.\n\nName: '+name+'\nEmail: '+email+'\nCity: '+city+'\n');
       a.textContent='Email me instead ('+addr+')'; lm.appendChild(a);
     })
     .then(function(){btn.disabled=false;});
