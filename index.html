@@ -115,6 +115,8 @@ gap:clamp(32px,6vw,96px);padding-top:clamp(110px,14vw,150px);padding-bottom:clam
 background:var(--gold);color:var(--ink);padding:.62em 1.25em .58em;border-radius:3px;border:1px solid var(--gold);
 transition:background-color .2s ease,color .2s ease}
 .btn:hover{background:#f0cf8c;border-color:#f0cf8c}
+.btn.line-dark{background:transparent;color:var(--cream);border-color:rgba(242,234,217,.6)}
+.btn.line-dark:hover{background:var(--cream);color:var(--ink)}
 .btn.line{background:transparent;color:var(--type);border-color:var(--type)}
 .btn.line:hover{background:var(--type);color:var(--paper)}
 .textlink{color:var(--cream);text-decoration-color:rgba(224,184,106,.7);text-underline-offset:.22em;text-decoration-thickness:1px}
@@ -127,6 +129,25 @@ background:radial-gradient(closest-side at 62% 30%, rgba(240,200,120,.28), trans
 radial-gradient(closest-side at 35% 75%, rgba(47,109,181,.42), transparent)}
 .portrait img{border-radius:4px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 34px 60px -24px rgba(0,0,0,.75)}
 
+/* ---------- buy options ---------- */
+.buy{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.8vw,20px)}
+.buyopt{display:grid;gap:.15em;height:100%;padding:1.1em 1.3em 1.15em;border:1px solid rgba(224,184,106,.55);border-radius:4px;background:rgba(6,20,40,.45);color:var(--cream);text-decoration:none;transition:background-color .2s ease,border-color .2s ease}
+.buyopt:hover{background:rgba(224,184,106,.14);border-color:var(--gold)}
+.buyopt .where{font-style:italic;color:var(--gold);font-size:1.0625rem}
+.buyopt b{font-weight:500;font-size:1.5rem;line-height:1.15}
+.buyopt .price{font-size:1.3125rem;font-variant-numeric:lining-nums}
+.buyopt .price small{display:block;font-size:1rem;color:var(--mist);font-style:italic}
+.buyopt .go{margin-top:.5em;color:var(--gold);font-size:1.0625rem;text-decoration:underline;text-decoration-color:rgba(224,184,106,.6);text-underline-offset:.22em;text-decoration-thickness:1px}
+@media (max-width:520px){.buy{grid-template-columns:1fr}}
+.bookband{background:radial-gradient(55% 70% at 100% 0%, rgba(243,217,160,.12), transparent 70%),radial-gradient(50% 60% at 0% 100%, rgba(47,109,181,.22), transparent 70%),var(--night)}
+.bookband .wrap{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.bookband .cover{display:block;max-width:300px;justify-self:center}
+.bookband .cover img{border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 30px 50px -22px rgba(0,0,0,.8)}
+.bookband .eyebrow{color:var(--gold);margin-bottom:.7em}
+.bookband h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);color:var(--cream);margin-bottom:.4em}
+.bookband .sub{color:var(--mist);max-width:50ch;margin-bottom:1.4em}
+.bookband .more{margin:1.4em 0 0}
+@media (max-width:860px){.bookband .wrap{grid-template-columns:1fr}.bookband .cover{max-width:220px}}
 /* ---------- paper sections ---------- */
 .paper{background:var(--paper);color:var(--type)}
 .paper a{color:var(--type)}
@@ -215,9 +236,9 @@ html{scroll-behavior:auto}
 <nav aria-label="Sections">
 <a href="#about">About</a>
 <a class="keep" href="pharmacology-insiders.html">Pharmacology Insiders</a>
-<a href="book.html">The book</a>
+<a class="keep" href="#book-out">Buy the book</a>
 <a href="blog.html">Blog</a>
-<a class="keep" href="publications.html">Publications</a>
+<a href="publications.html">Publications</a>
 <a href="talks.html">Talks</a>
 <a class="keep" href="#contact">Contact</a>
 </nav>
@@ -233,14 +254,32 @@ html{scroll-behavior:auto}
 <p class="lede">Close to two decades of finding new medicines, across academia, pharma and AI-driven discovery.</p>
 <p class="sublede">Chief Scientist, Drug Discovery at Sravathi AI Technology. Founder of Pharmacology Insiders. Author of <i>The Molecule That Lived</i>.</p>
 <div class="actions">
-<a class="btn" href="pharmacology-insiders.html">Explore Pharmacology Insiders</a>
-<a class="textlink" href="book.html">The book</a>
+<a class="btn" href="#book-out">Buy my new book</a>
+<a class="btn line-dark" href="pharmacology-insiders.html">Explore Pharmacology Insiders</a>
 <a class="textlink" href="blog.html">The blog</a>
 </div>
 </div>
 <figure class="portrait">
 <img src="author.jpg" width="560" height="700" alt="Portrait of Dr. Nagaraj Kulkarni">
 </figure>
+</div>
+</section>
+
+<section class="bookband section" id="book-out" aria-labelledby="book-out-h">
+<div class="wrap">
+<a class="cover" href="book.html" aria-label="About The Molecule That Lived"><img src="cover-600.jpg" width="600" height="851" loading="lazy" alt="Cover of The Molecule That Lived by Dr. Nagaraj Kulkarni"></a>
+<div>
+<p class="eyebrow">My debut novel, out now</p>
+<h2 id="book-out-h">The Molecule That Lived</h2>
+<p class="sub">A Story of Science, Hope, and the Long Road to Medicine. With a foreword by Dr. Shridhar Narayanan. Available on Amazon as a paperback and on Kindle, in India and worldwide.</p>
+<ul class="buy">
+<li><a class="buyopt" href="https://www.amazon.in/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, India: ₹499. Buy on Amazon.in"><span class="where">India</span><b>Paperback</b><span class="price">₹499</span><span class="go">Buy on Amazon.in</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.in/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, India: ₹284, or free on Kindle Unlimited. Buy on Amazon.in"><span class="where">India</span><b>Kindle</b><span class="price">₹284<small>or free on Kindle Unlimited</small></span><span class="go">Buy on Amazon.in</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.com/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, Worldwide: $9.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Paperback</b><span class="price">$9.99</span><span class="go">Buy on Amazon.com</span></a></li>
+<li><a class="buyopt" href="https://www.amazon.com/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, Worldwide: $2.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Kindle</b><span class="price">$2.99</span><span class="go">Buy on Amazon.com</span></a></li>
+</ul>
+<p class="more"><a class="textlink" href="book.html">About the book</a></p>
+</div>
 </div>
 </section>
 
@@ -259,7 +298,7 @@ html{scroll-behavior:auto}
 <dt>Founder</dt><dd>Pharmacology Insiders</dd>
 <dt>Doctorate</dt><dd>PhD in Pharmacology, SASTRA University, India</dd>
 <dt>Postdoctoral</dt><dd>University of Gothenburg, Sweden</dd>
-<dt>Author</dt><dd><i>The Molecule That Lived</i> (debut novel)</dd>
+<dt>Author</dt><dd><i>The Molecule That Lived</i> (debut novel, out now)</dd>
 </dl>
 </div>
 </div>
@@ -277,10 +316,10 @@ html{scroll-behavior:auto}
 <a href="pharmacology-insiders.html">Visit Pharmacology Insiders</a>
 </li>
 <li class="card">
-<span class="tag">Debut novel, coming soon</span>
+<span class="tag">Debut novel, out now</span>
 <h3>The Molecule That Lived</h3>
-<p>A story of science, hope and the long road to medicine, with a foreword by Dr. Shridhar Narayanan. Join the launch list to hear when it is out.</p>
-<a href="book.html">About the book</a>
+<p>A story of science, hope and the long road to medicine, with a foreword by Dr. Shridhar Narayanan. Available now on Amazon as a paperback and on Kindle.</p>
+<a href="#book-out">Buy the book</a>
 </li>
 <li class="card">
 <span class="tag">Writing</span>
@@ -350,7 +389,7 @@ html{scroll-behavior:auto}
 <div class="wrap">
 <div>
 <h2 id="contact-h">Get in touch</h2>
-<p>For speaking invitations, interviews, collaborations and publishing enquiries, send a short email. To hear when the book is out, join the launch list on the <a class="textlink" href="book.html">book page</a>.</p>
+<p>For speaking invitations, interviews, collaborations and publishing enquiries, send a short email. To get the book, see the <a class="textlink" href="#book-out">buying options</a>.</p>
 <div class="actions">
 <a class="btn js-mailbtn" href="#contact">Send an email</a>
 <a class="textlink" href="talks.html#invite">Invite me to speak</a>
