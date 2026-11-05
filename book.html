@@ -50,6 +50,15 @@
       "description": "The story of patients waiting for answers and a small team of scientists determined to discover a medicine for a disease the pharmaceutical industry has largely overlooked."
     },
     {
+      "@type": "VideoObject",
+      "name": "The Molecule That Lived: launch day",
+      "description": "Launch of The Molecule That Lived on 25 October 2026, with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar.",
+      "thumbnailUrl": "https://www.nagarajkulkarni.com/launch-poster.jpg",
+      "contentUrl": "https://www.nagarajkulkarni.com/launch-video.mp4",
+      "uploadDate": "2026-11-05",
+      "duration": "PT30S"
+    },
+    {
       "@type": "Person",
       "@id": "https://www.nagarajkulkarni.com/#author",
       "name": "Dr. Nagaraj Kulkarni",
@@ -222,6 +231,16 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .buyband .eyebrow{color:var(--gold);margin-bottom:.8em}
 .buyband p{color:var(--mist);max-width:40ch}
 @media (max-width:860px){.buyband .wrap{grid-template-columns:1fr}}
+/* ---------- launch video ---------- */
+.launch{background:var(--ink)}
+.launch .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:center}
+.launch figure{margin:0 auto;width:100%;max-width:340px}
+.launch video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;border-radius:6px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 34px 60px -24px rgba(0,0,0,.8)}
+.launch .eyebrow{color:var(--gold);margin-bottom:.8em}
+.launch h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);color:var(--cream);margin-bottom:.5em}
+.launch p{color:var(--mist);max-width:46ch}
+.launch .actions{margin-top:1.6em}
+@media (max-width:860px){.launch .wrap{grid-template-columns:1fr}.launch figure{max-width:300px}}
 /* ---------- contact ---------- */
 .contact{background:
   radial-gradient(60% 80% at 100% 0%, rgba(243,217,160,.10), transparent 70%), var(--ink)}
@@ -328,6 +347,26 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <li><a class="buyopt" href="https://www.amazon.com/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, Worldwide: $9.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Paperback</b><span class="price">$9.99</span><span class="go">Buy on Amazon.com</span></a></li>
 <li><a class="buyopt" href="https://www.amazon.com/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, Worldwide: $2.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Kindle</b><span class="price">$2.99</span><span class="go">Buy on Amazon.com</span></a></li>
 </ul>
+    </div>
+  </section>
+
+  <section class="launch section" id="launch" aria-labelledby="launch-h">
+    <div class="wrap">
+      <figure>
+        <video controls playsinline preload="none" poster="launch-poster.jpg" width="720" height="1280" aria-label="Launch day video: The Molecule That Lived released at a small gathering with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar">
+          <source src="launch-video.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="launch-video.mp4">Download it</a>.
+        </video>
+      </figure>
+      <div>
+        <p class="eyebrow">Launch day &middot; 25 October 2026</p>
+        <h2 id="launch-h">Releasing the book among friends</h2>
+        <p><i>The Molecule That Lived</i> was released at a small gathering of friends, with Dr. Shridhar Narayanan, who wrote the foreword, and Ms. Vidya Shridhar as chief guests. The first copy went to Aparna, to whom the book is dedicated.</p>
+        <p>Thank you to everyone who came, and to everyone who has picked up a copy since.</p>
+        <div class="actions">
+          <a class="btn" href="#buy">Get your copy</a>
+        </div>
+      </div>
     </div>
   </section>
 
