@@ -141,13 +141,14 @@ radial-gradient(closest-side at 35% 75%, rgba(47,109,181,.42), transparent)}
 @media (max-width:520px){.buy{grid-template-columns:1fr}}
 .bookband{background:radial-gradient(55% 70% at 100% 0%, rgba(243,217,160,.12), transparent 70%),radial-gradient(50% 60% at 0% 100%, rgba(47,109,181,.22), transparent 70%),var(--night)}
 .bookband .wrap{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
-.bookband .cover{display:block;max-width:300px;justify-self:center}
-.bookband .cover img{border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 30px 50px -22px rgba(0,0,0,.8)}
+.bookband .vid{margin:0 auto;width:100%;max-width:300px}
+.bookband .vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;border-radius:6px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 30px 50px -22px rgba(0,0,0,.8)}
+.bookband .vid figcaption{font-size:1rem;font-style:italic;color:var(--mist);margin-top:.8em}
 .bookband .eyebrow{color:var(--gold);margin-bottom:.7em}
 .bookband h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);color:var(--cream);margin-bottom:.4em}
 .bookband .sub{color:var(--mist);max-width:50ch;margin-bottom:1.4em}
 .bookband .more{margin:1.4em 0 0}
-@media (max-width:860px){.bookband .wrap{grid-template-columns:1fr}.bookband .cover{max-width:220px}}
+@media (max-width:860px){.bookband .wrap{grid-template-columns:1fr}.bookband .vid{max-width:260px}}
 /* ---------- paper sections ---------- */
 .paper{background:var(--paper);color:var(--type)}
 .paper a{color:var(--type)}
@@ -267,7 +268,7 @@ html{scroll-behavior:auto}
 
 <section class="bookband section" id="book-out" aria-labelledby="book-out-h">
 <div class="wrap">
-<a class="cover" href="book.html" aria-label="About The Molecule That Lived"><img src="cover-600.jpg" width="600" height="851" loading="lazy" alt="Cover of The Molecule That Lived by Dr. Nagaraj Kulkarni"></a>
+<figure class="vid"><video controls muted loop playsinline preload="metadata" poster="launch-poster.jpg" width="720" height="1280" data-autoplay aria-label="Launch day video: The Molecule That Lived released with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar"><source src="launch-video.mp4" type="video/mp4"></video><figcaption>Launch day, 25 October 2026, with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar.</figcaption></figure>
 <div>
 <p class="eyebrow">My debut novel, out now</p>
 <h2 id="book-out-h">The Molecule That Lived</h2>
@@ -278,7 +279,7 @@ html{scroll-behavior:auto}
 <li><a class="buyopt" href="https://www.amazon.com/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, Worldwide: $9.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Paperback</b><span class="price">$9.99</span><span class="go">Buy on Amazon.com</span></a></li>
 <li><a class="buyopt" href="https://www.amazon.com/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, Worldwide: $2.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Kindle</b><span class="price">$2.99</span><span class="go">Buy on Amazon.com</span></a></li>
 </ul>
-<p class="more"><a class="textlink" href="book.html">About the book</a> &middot; <a class="textlink" href="book.html#launch">Watch the launch video</a></p>
+<p class="more"><a class="textlink" href="book.html">Everything about the book</a></p>
 </div>
 </div>
 </section>
@@ -424,6 +425,16 @@ var hello='mailto:'+addr+'?subject='+encodeURIComponent('Hello from your website
 document.querySelectorAll('.js-mailbtn').forEach(function(a){a.href=hello;});
 document.querySelectorAll('.js-mail').forEach(function(a){a.href='mailto:'+addr;a.textContent=addr;});
 var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
+})();
+</script>
+<script>
+(function(){
+var lv=document.querySelector('video[data-autoplay]');
+if(lv&&'IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){var p=lv.play();if(p&&p.catch){p.catch(function(){});}}else{lv.pause();}
+});},{threshold:.5}).observe(lv);
+}
 })();
 </script>
 </body>

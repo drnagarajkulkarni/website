@@ -133,6 +133,7 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .subtitle{font-style:italic;font-size:clamp(1.3rem,1.1rem + .8vw,1.6rem);line-height:1.35;color:var(--mist);margin:.8em 0 1.4em;max-width:26ch}
 .byline{margin:0 0 2.2em;padding-top:1.1em;border-top:1px solid rgba(224,184,106,.45);max-width:26rem;font-size:1.1875rem;line-height:1.5}
 .byline span{display:block;color:var(--mist);font-style:italic;font-size:1.0625rem}
+.avail{margin:-1.4em 0 1.6em;color:var(--mist);font-size:1.0625rem;font-style:italic}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
 .btn{display:inline-block;font:inherit;font-size:1.125rem;font-weight:500;text-decoration:none;
   background:var(--gold);color:var(--ink);padding:.62em 1.25em .58em;border-radius:3px;border:1px solid var(--gold);
@@ -226,10 +227,15 @@ h1,h2,h3{font-weight:500;margin:0;line-height:1.08;letter-spacing:-0.005em;text-
 .buyopt .go{margin-top:.5em;color:var(--gold);font-size:1.0625rem;text-decoration:underline;text-decoration-color:rgba(224,184,106,.6);text-underline-offset:.22em;text-decoration-thickness:1px}
 @media (max-width:520px){.buy{grid-template-columns:1fr}}
 .buyband{background:radial-gradient(55% 70% at 0% 100%, rgba(47,109,181,.22), transparent 70%),var(--night)}
-.buyband .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.buyband .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.buyband figure{margin:0 auto;width:100%;max-width:320px}
+.buyband video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;border-radius:6px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 34px 60px -24px rgba(0,0,0,.8)}
+.buyband figcaption{font-size:1rem;font-style:italic;color:var(--mist);margin-top:.8em}
+.buyband .buy{margin:1.6em 0 1.4em}
+.buyband .launchnote{font-size:1.0625rem;color:var(--mist);max-width:58ch}
 .buyband h2{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);color:var(--cream);margin-bottom:.5em}
 .buyband .eyebrow{color:var(--gold);margin-bottom:.8em}
-.buyband p{color:var(--mist);max-width:40ch}
+.buyband p{color:var(--mist);max-width:46ch}
 @media (max-width:860px){.buyband .wrap{grid-template-columns:1fr}}
 /* ---------- launch video ---------- */
 .launch{background:var(--ink)}
@@ -321,9 +327,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <h1>The Molecule That Lived</h1>
         <p class="subtitle">A Story of Science, Hope, and the Long Road to Medicine</p>
         <p class="byline">By Dr. Nagaraj Kulkarni<span>Foreword by Dr. Shridhar Narayanan</span></p>
+        <p class="avail">Paperback and Kindle &middot; Released 25 October 2026</p>
         <div class="actions">
           <a class="btn" href="#buy">Buy the book</a>
-          <a class="textlink" href="#book">Read about the book</a>
+          <a class="textlink" href="#launch">Watch the launch</a>
+          <a class="textlink" href="#book">About the book</a>
         </div>
       </div>
       <figure class="book">
@@ -336,36 +344,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 
   <section class="buyband section" id="buy" aria-labelledby="buy-h">
     <div class="wrap">
+      <figure id="launch">
+        <video controls muted loop playsinline preload="metadata" poster="launch-poster.jpg" width="720" height="1280" data-autoplay aria-label="Launch day video: The Molecule That Lived released at a small gathering with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar">
+          <source src="launch-video.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="launch-video.mp4">Download it</a>.
+        </video>
+        <figcaption>Launch day, 25 October 2026, with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar. Tap the video for sound.</figcaption>
+      </figure>
       <div>
         <p class="eyebrow">Out now</p>
         <h2 id="buy-h">Get your copy</h2>
         <p>Available on Amazon as a paperback and on Kindle, in India and worldwide. Kindle readers in India can also read it free with Kindle Unlimited.</p>
-      </div>
-      <ul class="buy">
+        <ul class="buy">
 <li><a class="buyopt" href="https://www.amazon.in/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, India: ₹499. Buy on Amazon.in"><span class="where">India</span><b>Paperback</b><span class="price">₹499</span><span class="go">Buy on Amazon.in</span></a></li>
 <li><a class="buyopt" href="https://www.amazon.in/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, India: ₹284, or free on Kindle Unlimited. Buy on Amazon.in"><span class="where">India</span><b>Kindle</b><span class="price">₹284<small>or free on Kindle Unlimited</small></span><span class="go">Buy on Amazon.in</span></a></li>
 <li><a class="buyopt" href="https://www.amazon.com/dp/9359439916" rel="noopener" target="_blank" aria-label="Paperback, Worldwide: $9.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Paperback</b><span class="price">$9.99</span><span class="go">Buy on Amazon.com</span></a></li>
 <li><a class="buyopt" href="https://www.amazon.com/dp/B0HNKMMFN2" rel="noopener" target="_blank" aria-label="Kindle, Worldwide: $2.99. Buy on Amazon.com"><span class="where">Worldwide</span><b>Kindle</b><span class="price">$2.99</span><span class="go">Buy on Amazon.com</span></a></li>
 </ul>
-    </div>
-  </section>
-
-  <section class="launch section" id="launch" aria-labelledby="launch-h">
-    <div class="wrap">
-      <figure>
-        <video controls playsinline preload="none" poster="launch-poster.jpg" width="720" height="1280" aria-label="Launch day video: The Molecule That Lived released at a small gathering with chief guests Dr. Shridhar Narayanan and Ms. Vidya Shridhar">
-          <source src="launch-video.mp4" type="video/mp4">
-          Your browser cannot play this video. <a href="launch-video.mp4">Download it</a>.
-        </video>
-      </figure>
-      <div>
-        <p class="eyebrow">Launch day &middot; 25 October 2026</p>
-        <h2 id="launch-h">Releasing the book among friends</h2>
-        <p><i>The Molecule That Lived</i> was released at a small gathering of friends, with Dr. Shridhar Narayanan, who wrote the foreword, and Ms. Vidya Shridhar as chief guests. The first copy went to Aparna, to whom the book is dedicated.</p>
-        <p>Thank you to everyone who came, and to everyone who has picked up a copy since.</p>
-        <div class="actions">
-          <a class="btn" href="#buy">Get your copy</a>
-        </div>
+        <p class="launchnote"><i>The Molecule That Lived</i> was released at a small gathering of friends, with Dr. Shridhar Narayanan, who wrote the foreword, and Ms. Vidya Shridhar as chief guests. The first copy went to Aparna, to whom the book is dedicated.</p>
       </div>
     </div>
   </section>
@@ -504,6 +500,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     .then(function(){btn.disabled=false;});
   });
   document.querySelectorAll('.js-mail').forEach(function(a){a.href='mailto:'+addr;a.textContent=addr;});
+  // The launch video plays silently while it is on screen and pauses when it is not.
+  var lv=document.querySelector('video[data-autoplay]');
+  if(lv&&'IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var p=lv.play();if(p&&p.catch){p.catch(function(){});}}else{lv.pause();}
+    });},{threshold:.5}).observe(lv);
+  }
   var y=document.getElementById('yr'); if(y){y.textContent=new Date().getFullYear();}
 
   // The molecule travels the road once, pausing at each stage, when the road scrolls into view.
